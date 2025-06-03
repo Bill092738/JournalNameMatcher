@@ -24,6 +24,13 @@ nameMap.exe
 
 3. The results will be written to `output.csv`, mapping each abbreviation to the best-matched full journal name.
 
+4. *(Optional)* To calculate similarity scores for the matched results, compile and run the similarity calculator:
+```sh
+g++ -o similarityCalculator similarityCalculator.cpp
+./similarityCalculator
+```
+This will generate `output_with_similarity.csv` with similarity scores for each mapping.
+
 ## Files
 
 - `nameMap.c` — Main source code.

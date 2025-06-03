@@ -71,7 +71,10 @@ InputAbbrList inputAbbrList;
 
 static const AbbrRule abbr_rules[] = {
     {"Computer", "Comp."},
-    {"Research", "Res."},
+    {"Research", "Res"},
+    {"Journal of", "J."},
+    {"Journal of the", "J."},
+    {"Proceedings", "Proc."},
     {"Clinical", "Clin."},
     {"International", "Int."},
     {"Journal", "J."},
@@ -82,6 +85,10 @@ static const AbbrRule abbr_rules[] = {
     {"Review", "Rev."},
     {"Studies", "Stud."},
     {"Physics", "Phys."},
+    {"REVIEWS", "REV."},
+    {"Letters", "Lett."},
+    {"Communications", "Commun."},
+    {"Reports", "Rep."},
     {"Chemistry", "Chem."},
     {"Biology", "Biol."},
     {"Mathematics", "Math."},
@@ -492,6 +499,13 @@ void writeAns(const char* inputFile, const char* outputFile) {
         fprintf(fout, "%s,matched_fullname\n", line);
     }
 
+    // Count total lines for progress bar
+    int total = 0;
+    long pos = ftell(fin);
+    while (fgets(line, sizeof(line), fin)) total++;
+    fseek(fin, pos, SEEK_SET);
+
+    int current = 0;
     while (fgets(line, sizeof(line), fin)) {
         // remove trailing newline characters
         char* p = line;
@@ -507,7 +521,22 @@ void writeAns(const char* inputFile, const char* outputFile) {
             match = calculateSimilarity(cleaned);
         }
         fprintf(fout, "\"%s\",%s\n", line, match ? match : "");
+
+        // Progress bar
+        current++;
+        int barWidth = 40;
+        float progress = (float)current / total;
+        int pos = (int)(barWidth * progress);
+        printf("\r[");
+        for (int i = 0; i < barWidth; ++i) {
+            if (i < pos) printf("=");
+            else if (i == pos) printf(">");
+            else printf(" ");
+        }
+        printf("] %3d%%", (int)(progress * 100));
+        fflush(stdout);
     }
+    printf("\n");
 
     fclose(fin);
     fclose(fout);
