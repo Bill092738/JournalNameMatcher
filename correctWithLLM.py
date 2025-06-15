@@ -10,9 +10,11 @@ def check_journal_matches(csv_file_path, rounds=-1, batch_size=10):
         rounds (int): Number of rounds to check (-1 for all entries)
         batch_size (int): Number of entries to check per API call
     """
-    # Read CSV file
+    # Read CSV file and validate required column
     df = pd.read_csv(csv_file_path)
-    
+    if 'abbreviation' not in df.columns:
+        raise KeyError("CSV must contain 'abbreviation' column")
+
     # Initialize OpenAI client
     client = OpenAI(base_url="http://127.0.0.1:8080/", api_key="none")
     
@@ -23,46 +25,53 @@ def check_journal_matches(csv_file_path, rounds=-1, batch_size=10):
     
     for i in range(0, total_entries, batch_size):
         batch = df.iloc[i:i + batch_size]
+        abbreviations = batch['abbreviation'].tolist()
         
-        # Construct prompt for batch
-        prompt = "For each of the following journal name pairs, indicate if the matching is correct. If incorrect, provide the correct full name:\n\n"
-        for _, row in batch.iterrows():
-            prompt += f"Abbreviated: {row['abbreviation']}\n"
-            prompt += f"Matched: {row['matched_fullname']}\n"
-            prompt += "---\n"
+        # Build structured prompt (one abbreviation per line)
+        prompt = (
+            "Provide ONLY the full name for each journal abbreviation below. "
+            "Return exactly one full name per line, in the same order. "
+            "DO NOT add any other text or numbering.\n\n"
+            + "\n".join(abbreviations)
+        )
         
         try:
             response = client.chat.completions.create(
-                model="gpt-3.5-turbo",
+                model="Meta-Llama-3-8B-Instruct.Q6_K",
                 messages=[
-                    {"role": "system", "content": "You are a journal name matching expert. Evaluate each pair and respond with either 'CORRECT' or provide the correct full name if the matching is wrong."},
+                    {
+                        "role": "system", 
+                        "content": "You are a journal name matching expert. Return only full names."
+                    },
                     {"role": "user", "content": prompt}
                 ],
                 temperature=0.3
             )
             
-            print(f"\nProcessing batch {i//batch_size + 1}:")
-            print(response.choices[0].message.content)
-            results.extend(response.choices[0].message.content.split('\n'))
+            # Process response content
+            response_content = response.choices[0].message.content
+            batch_results = [
+                line.strip() for line in response_content.split('\n') 
+                if line.strip()  # Remove blank lines
+            ][:len(abbreviations)]  # Truncate to expected size
             
-            # Add a small delay to avoid overwhelming the API
-            time.sleep(1)
+            results.extend(batch_results)
+            print(f"Batch {i//batch_size+1}: Processed {len(batch_results)} entries")
+            
+            time.sleep(0.3)  # Avoid API rate limits
             
         except Exception as e:
             print(f"Error processing batch starting at index {i}: {str(e)}")
+            # Add placeholders for failed batch
+            results.extend([f"Error: {str(e)}"] * min(batch_size, total_entries-i))
             continue
     
     return results
 
 if __name__ == "__main__":
-    # Example usage
-    csv_path = "output.csv"
-    
-    # Ask user for number of rounds
-    rounds_input = input("Enter number of rounds to check (or -1 for all entries): ")
-    rounds = int(rounds_input)
+    csv_path = "input.csv"
+    rounds = int(input("Enter number of rounds to compute (-1 for all entries): "))
     
     results = check_journal_matches(csv_path, rounds)
-    
     print("\nCheck completed!")
-    print(f"Total responses processed: {len(results)}")
+    print(f"Total responses: {len(results)}")
