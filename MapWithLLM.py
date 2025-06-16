@@ -53,11 +53,13 @@ def check_journal_matches(csv_file_path, output_file_path, rounds=-1, batch_size
         
         # Build structured prompt (one abbreviation per line)
         prompt = (
-            "You are a journal name mapping machine. For the 10 line of string below:\n"
+            "You are a journal name mapping machine. For the 10 line of string below, reply exactly 10 answers even if duplicated.:\n"
             "1. Convert each journal abbreviation or chaotic format name to its full name \n"
             "2. Return only the full journal name in order of 10 line in plain text.\n"
             "3. Remove any extra text, including publisher infomation of journal.\n"
-            "4. Do not add any explain, headers, or punctuation mark or symbol of sorting. Act as a machine.\n\n"
+            "4. Be aware that some string may already be full journal names, so return them as is.\n"
+            "5. Be aware that mutiple string can lead to the same journal name, so return the same journal name for them.\n"
+            "6. Do not add any explain, headers, or punctuation mark or symbol of sorting. Act as a machine!\n\n"
             + "\n".join(abbreviations)
         )
 
@@ -67,10 +69,10 @@ def check_journal_matches(csv_file_path, output_file_path, rounds=-1, batch_size
                 messages=[
                     {
                         "role": "system", 
-                        "content": ("You are a journal name matching expert. "
-                                  "Always provide a full journal name, even if you need to make "
-                                  "an educated guess based on the abbreviation pattern and your "
-                                  "knowledge of academic journals.")
+                        "content": ("You are a journal name matching machine. "
+                                  "Always provide a full journal name, even if you need to make guess based on the pattern and your knowledge."
+                                  "DO NOT add any explain, headers, or punctuation mark or symbol of sorting."
+                                  "For the 10 line of string below, reply exactly 10 answers even if duplicated.")
                     },
                     {"role": "user", "content": prompt}
                 ],
