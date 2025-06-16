@@ -1,95 +1,58 @@
 # JournalNameMatcher
 Map your Journal Abbreviations to Full Name
 
-A program to map journal abbreviations to their full journal names using fuzzy matching and abbreviation rules.
+![workflow](workflow.png)
+
+A program to map journal abbreviations to their full journal names using fine tuned Large Language Model.
+
+## Requirements
+
+- **OS**: Ubuntu 24.04 (or compatible Linux)
+- **Python**: 3.8+
+- **C++ Compiler**: `g++` (for the normalizer)
+- **Python Packages**:
+  - `pandas`
+  - `openai`
+- **LLM**:  
+  - **Recommended**: [Meta-Llama-3-8B-Instruct](https://huggingface.co/QuantFactory/Meta-Llama-3-8B-Instruct-GGUF) running locally (e.g., via [OpenAI-compatible API server](https://github.com/jmorganca/ollama) or similar)
+  - **Alternative**: OpenAI API (GPT-3.5/4)
+
 
 ## Usage
 
-### 1. Clone the Repository
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/Bill092738/JournalNameMatcher.git
+   cd JournalNameMatcher
+   ```
 
-**Linux / MacOS / Windows (with Git Bash):**
-```sh
-git clone https://github.com/Bill092738/JournalNameMatcher.git
-cd JournalNameMatcher
-```
+2. **Install Python dependencies:**
+    ```sh
+    pip install pandas openai
+    ```
+    or globally (not recommend)
+    ```sh
+    sudo apt install python3-pandas python3-openai
+    ```
+3. **Compile and run the normalizer (C++):**
+    ```sh
+    g++ -O3 -march=native -funroll-loops -flto -s -pipe -o normalizer normalizer.cpp
+    ./normalizer
+    ```
+4. **Mapping using MapWithLLM.py**
+    - Make sure you have a valid API to connect.
+    - For local setup, please refer to [llama.cpp](https://github.com/ggml-org/llama.cpp) .
+    - Defult API in code is set to `127.0.0.1:8080` with no API key.
+    ```sh
+    python3 MapWithLLM.py
+    ```
+5. **Get full response**
+    ```sh
+    python3 reorganizer.py
+    ```
+    - Your results will be in `journal_matches_expanded.csv`
 
----
-
-### 2. Install GCC/G++ Compiler
-
-#### **Linux (Debian/Ubuntu):**
-```sh
-sudo apt update
-sudo apt install build-essential
-```
-
-#### **MacOS (with Homebrew):**
-```sh
-brew install gcc
-```
-
-#### **Windows (with MinGW):**
-- Download and install [MinGW](https://www.mingw-w64.org/).
-- Add `C:\MinGW\bin` to your system PATH.
-- Open the MinGW terminal or Command Prompt.
-
----
-
-### 3. Prepare Input Files
-
-- Place your original journal list as `orig.csv` and your abbreviations as `input.csv` in the project directory.
-
----
-
-### 4. Compile the Program
-
-#### **Linux / MacOS:**
-```sh
-gcc -o nameMap nameMap.c
-```
-
-#### **Windows (MinGW):**
-```sh
-gcc -o nameMap.exe nameMap.c
-```
-
----
-
-### 5. Run the Program
-
-#### **Linux / MacOS:**
-```sh
-./nameMap
-```
-
-#### **Windows (MinGW):**
-```sh
-nameMap.exe
-```
-
-- The results will be written to `output.csv`, mapping each abbreviation to the best-matched full journal name.
-
----
-
-### 6. (Optional) Calculate Similarity Scores
-
-#### **Linux / MacOS:**
-```sh
-g++ -o similarityCalculator similarityCalculator.cpp
-./similarityCalculator
-```
-
-#### **Windows (MinGW):**
-```sh
-g++ -o similarityCalculator.exe similarityCalculator.cpp
-similarityCalculator.exe
-```
-
-- This will generate `output_with_similarity.csv` with similarity scores for each mapping.
-
-## Files
-
-- `nameMap.c` — Main source code.
-- `orig.csv` — CSV with full journal names.
-- `input.csv` — CSV with journal abbreviations.
-- `output.csv` — Output with matched results.
+## Verification
+- Model: Meta-Llama-3-8B-Instruct.Q6_K
+- Backend: llama.cpp on SYCL
+- GPU: Intel Arc A580 with 8G of VRAM
