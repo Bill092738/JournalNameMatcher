@@ -232,7 +232,7 @@ void print_usage() {
     std::cout << " Journal Similarity Calculator\n";
     std::cout << "============================================\n";
     std::cout << "Usage:\n";
-    std::cout << "  1. Place your input CSV as 'output.csv' in the current directory.\n";
+    std::cout << "  1. Place your input CSV as 'journal_matches_output.csv' in the current directory.\n";
     std::cout << "  2. Run this program. It will generate 'output_with_similarity.csv' with similarity scores.\n";
     std::cout << "\n";
     std::cout << "Output:\n";
@@ -246,7 +246,7 @@ void print_usage() {
 int main() {
     print_usage();
 
-    auto data = readCSV("output.csv");
+    auto data = readCSV("journal_matches_output.csv");
     // Add header for new column if present
     if (!data.empty() && data[0].size() >= 2) {
         if (data[0].size() == 2) {

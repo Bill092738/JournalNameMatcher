@@ -9,16 +9,16 @@ abbreviation,full_name
 „ÄäGastric Cancer„Äã,Gastric Cancer
 „ÄäMol Cancer Res„Äã,Molecular Cancer Research
 „ÄäMolecular Cancer Therapeutics„Äã,Molecular Cancer Therapeutics
-ANTICANCER RES.,1. Anticancer Research
-Antisense: Chemical Modifications. Encyclopedia of Cancer,2. Antisense: Chemical Modifications. Encyclopedia of Cancer
-Asian Pac J Cancer Prev,3. Asian Pacific Journal of Cancer Prevention
-BR CANCER,4. Breast Cancer Research
-Br J Cancer,5. Breast Cancer Research
-BR. 1. CANCER,6. Breast Cancer Research
-Br. J. Cancer,7. British Journal of Cancer
-BREAST CANCER RES,8. British Journal of Cancer
-BREAST CANCER RES. TREAT.,9. Breast Cancer Research
-"BREAST CANCER RESEARCH, CURRENT MEDICINE GROUP LTD, GB",10. British Journal of Cancer
+ANTICANCER RES.,Anticancer Research
+Antisense: Chemical Modifications. Encyclopedia of Cancer,"Antisense: Chemical Modifications, Encyclopedia of Cancer"
+Asian Pac J Cancer Prev,Asian Pacific Journal of Cancer Prevention
+BR CANCER,Breast Cancer Research
+Br J Cancer,British Journal of Cancer
+BR. 1. CANCER,British Journal of Cancer
+Br. J. Cancer,British Journal of Cancer
+BREAST CANCER RES,Breast Cancer Research
+BREAST CANCER RES. TREAT.,Breast Cancer Research and Treatment
+"BREAST CANCER RESEARCH, CURRENT MEDICINE GROUP LTD, GB",Breast Cancer Research
 Brit. J. Cancer,British Journal of Cancer
 BRITISH JOURNAL OF CANCER,British Journal of Cancer
 "BRITISH JOURNAL OF CANCER, NATURE PUBLISHING GROUP, LONDON, GB",British Journal of Cancer
@@ -37,11 +37,11 @@ CANCER EPIDEMIOL BIOMARKERS PREV,"Cancer Epidemiology, Biomarkers and Prevention
 CANCER GENE THER,Cancer Gene Therapy
 Cancer Genet Cytogenet,Cancer Genetics and Cytogenetics
 Cancer Genetics and Cytogenetics,Cancer Imaging
-Cancer Imaging,"Cancer Immunology, Immunotherapy"
-CANCER IMMUNOL. IMMUNOTHER.,"Cancer Immunology, Immunotherapy"
-"CANCER IMMUNOLOGY AND IMMUNOTHERAPY, SPRINGER-VERLAG, BERLIN, DE",Cancer Immunology and Immunotherapy
-CANCER IMMUNOLOGY RESEARCH,Cancer Immunology Research
-"CANCER IMMUNOLOGY, IMMUNOTHERAPY, SPRINGER, BERLIN, DE",Cancer Immunology and Immunotherapy
+Cancer Imaging,Cancer Immunology Immunotherapy
+CANCER IMMUNOL. IMMUNOTHER.,Cancer Immunology Immunotherapy
+"CANCER IMMUNOLOGY AND IMMUNOTHERAPY, SPRINGER-VERLAG, BERLIN, DE",CANCER IMMUNOLOGY AND IMMUNOTHERAPY
+CANCER IMMUNOLOGY RESEARCH,CANCER IMMUNOLOGY RESEARCH
+"CANCER IMMUNOLOGY, IMMUNOTHERAPY, SPRINGER, BERLIN, DE",CANCER IMMUNOLOGY AND IMMUNOTHERAPY
 Cancer Investigation (Genitourinary Cancer),Cancer Investigation
 Cancer J,Cancer J
 Cancer Letter,Cancer Letter
@@ -49,7 +49,7 @@ Cancer Letters,Cancer Letters
 CANCER LETTERS 30 AUG 2004 LNKD- PUBMED:15279905,Cancer Letters
 "CANCER LETTERS, NEW YORK, NY, US",Cancer Letters
 "Cancer Medicine, John Wiley & Sons Ltd., GB",Cancer Medicine
-CANCER METASTASIS REV,Cancer Metastasis Reviews
+CANCER METASTASIS REV,Cancer Metastasis Review
 CANCER RES,Cancer Research
 Cancer Res.,Cancer Research
 "CANCER RES. (1994), 54(10), 2643-9 CODEN: CNREA8;ISSN: 0008-5472",Cancer Research
@@ -61,32 +61,32 @@ Cancer Research [on line],Cancer Research
 "CANCER RESEARCH, AMERICAN ASSOCIATION FOR CANCER RESEARCH, US",Cancer Research
 CANCER RESEARCH. 15 APR 2004,Cancer Research
 CANCER SCI.,Cancer Science
-Cancer Therapy: Molecular Tumor. Horizon Bioscience,Cancer Therapy: Molecular Tumor
+Cancer Therapy: Molecular Tumor. Horizon Bioscience,Cancer Therapy: Molecular Tumor Biology
 CANCER TREAT REP,Cancer Treatment Reports
 "CANCER TREATMENT REVIEWS, ELSEVIER, AMSTERDAM, NL",Cancer Treatment Reviews
-"CANCER, AMERICAN CANCER SOCIETY, PHILADELPHIA, PA, US","Cancer, American Cancer Society"
+"CANCER, AMERICAN CANCER SOCIETY, PHILADELPHIA, PA, US",Cancer
 Clin Cancer Res,Clinical Cancer Research
 CLIN CANCER RES.,Clinical Cancer Research
 CLIN LUNG CANCER,Clinical Lung Cancer
 CLIN. CANCER RES,Clinical Cancer Research
-Clin. Cancer Res.,CLINICAL CANCER RESEARCH
-CLINICAL CANCER RES.,CLINICAL CANCER RESEARCH
-CLINICAL CANCER RESEARCH,CLINICAL CANCER RESEARCH
-CLINICAL CANCER RESEARCH : AN OFFICIAL JOURNAL OF THE AMERICAN ASSOCIATION FOR CANCER RESEARCH,CLINICAL CANCER RESEARCH
-CLINICAL CANCER RESEARCH : AN OFFICIAL JOURNAL OF THE AMERICAN ASSOCIATION FOR CANCER RESEARCH 1 MAR 2004,CLINICAL CANCER RESEARCH
-"CLINICAL CANCER RESEARCH, THE AMERICAN ASSOCIATION FOR CANCER RESEARCH",CURRENT CANCER DRUG TARGETS
-CURRENT CANCER DRUG TARGETS,CURRENT PROBLEMS IN CANCER
-"CURRENT PROBLEMS IN CANCER, MOSBY, ST LOUIS, MO, US",DAI 18 KAI GAKUJUTSU SHOROKUSHU THE JAPANESE ASSOCIATION FOR MOLECULAR TARGET THERAPY OF CANCER
-DAI 18 KAI GAKUJUTSU SHUKAI PROGRAM SHOROKUSHU THE JAPANESE ASSOCIATION FOR MOLECULAR TARGET THERAPY OF CANCER,ENDOCRINE RELAT CANCER
-ENDOCR RELAT CANCER,ENDOCRINE RELAT CANCER
+Clin. Cancer Res.,Clinical Cancer Research
+CLINICAL CANCER RES.,Clinical Cancer Research
+CLINICAL CANCER RESEARCH,Clinical Cancer Research
+CLINICAL CANCER RESEARCH : AN OFFICIAL JOURNAL OF THE AMERICAN ASSOCIATION FOR CANCER RESEARCH,Clinical Cancer Research
+CLINICAL CANCER RESEARCH : AN OFFICIAL JOURNAL OF THE AMERICAN ASSOCIATION FOR CANCER RESEARCH 1 MAR 2004,Clinical Cancer Research
+"CLINICAL CANCER RESEARCH, THE AMERICAN ASSOCIATION FOR CANCER RESEARCH",Clinical Cancer Research
+CURRENT CANCER DRUG TARGETS,Current Cancer Drug Targets
+"CURRENT PROBLEMS IN CANCER, MOSBY, ST LOUIS, MO, US",Current Problems in Cancer
+DAI 18 KAI GAKUJUTSU SHUKAI PROGRAM SHOROKUSHU THE JAPANESE ASSOCIATION FOR MOLECULAR TARGET THERAPY OF CANCER,The Japanese Association for Molecular Target Therapy of Cancer
+ENDOCR RELAT CANCER,Endocrine-Related Cancer
 Eur. J. Cancer,European Journal of Cancer
 European Journal of Cancer,European Journal of Cancer
 "EUROPEAN JOURNAL OF CANCER SUPPLEMENTS, PROCEEDINGS OF THE 16TH EORTC-NCI-AACR SYMPOSIUM ON MOLECULAR TARGETS AND CANCER THERAPEUTICS","European Journal of Cancer Supplements, Proceedings of the 16th EORTC-NCI-AACR Symposium on Molecular Targets and Cancer Therapeutics"
-"EUROPEAN JOURNAL OF CANCER. SUPPLEMENT, PERGAMON, OXFORD, GB","European Journal of Cancer. Supplement, Pergamon, Oxford, GB"
+"EUROPEAN JOURNAL OF CANCER. SUPPLEMENT, PERGAMON, OXFORD, GB",European Journal of Cancer
 Expert Rev. Anticancer,Expert Review of Anticancer Therapy
-Expert Rev. Anticancer Ther.,Expert Review of Anticancer Therapy
-HCANCER IMMUNOL IMMUNOTHER.H,H Cancer Immunology and Immunotherapy
-INI J CANCER.,International Journal of Cancer
+Expert Rev. Anticancer Ther.,Expert Review of Anticancer
+HCANCER IMMUNOL IMMUNOTHER.H,"Cancer Immunology, Immunotherapy"
+INI J CANCER.,INI Journal of Cancer
 Int J Cancer,International Journal of Cancer
 INT J CANCER.,International Journal of Cancer
 INT. J. CANCER,International Journal of Cancer
@@ -97,17 +97,17 @@ J Cancer Res Clin Oncol.,Journal of Cancer Research and Clinical Oncology
 J NATL CANCER INST,Journal of National Cancer Institute
 JAPANESE JOURNAL OF CANCER RESEARCH,Japanese Journal of Cancer Research
 JOURNAL OF CANCER,Journal of Cancer
-JOURNAL OF CANCER RESEARCH AND CLINICAL ONCOLOGY,Journal of Cancer Research and Clinical Oncology
-JOURNAL OF NATIONAL CANCER INSTITUTE.,Journal of National Cancer Institute
+JOURNAL OF CANCER RESEARCH AND CLINICAL ONCOLOGY,Journal of Cancer
+JOURNAL OF NATIONAL CANCER INSTITUTE.,Journal of Cancer Research and Clinical Oncology
 JOURNAL OF THE NATIONAL CANCER INSTITUTE 16 JUN 2010 LNKD- PUBMED:20463307,Journal of the National Cancer Institute
 Jpn. J. Cancer Res.,Japanese Journal of Cancer Research
 LIPOSOMES IN THE THARAPY OF INFECTIOUS DISEASE ANDCANCER,Liposomes in the Therapy of Infectious Disease and Cancer
 LUNG CANCER,Lung Cancer
-MOL CANCER THER,Molecular Cancer Therapy
+MOL CANCER THER,Molecular Cancer Therapeutics
 MOLECULAR CANCER THERAPEUTICS,Molecular Cancer Therapeutics
-"Molecular Diagnosis of Cancer, Methods and Protocols, 2nd ed.;",Molecular Diagnosis of Cancer
+"Molecular Diagnosis of Cancer, Methods and Protocols, 2nd ed.;","Molecular Diagnosis of Cancer, Methods and Protocols, 2nd ed."
 NAT. REV. CANCER,Nature Reviews Cancer
 NATURE REVIEWS. CANCER,Nature Reviews Cancer
 PROC. AMER ASSOC. CANCER RES. MEETING ABSTRACTS,Proceedings of the American Association for Cancer Research Meeting Abstracts
-PROCEEDINGS OF THE AMERICAN ASSOCIATION FOR CANCER RESEARCH,Proceedings of the American Association for Cancer Research
-PROCEEDINGS OF THE AMERICAN ASSOCIATION FOR CANCER RESEARCH ANNUAL MEETING,Proceedings of the American Association for Cancer Research
+PROCEEDINGS OF THE AMERICAN ASSOCIATION FOR CANCER RESEARCH,PROCEEDINGS OF THE AMERICAN ASSOCIATION FOR CANCER RESEARCH
+PROCEEDINGS OF THE AMERICAN ASSOCIATION FOR CANCER RESEARCH ANNUAL MEETING,PROCEEDINGS OF THE AMERICAN ASSOCIATION FOR CANCER RESEARCH
